@@ -1,23 +1,16 @@
-tutum-docker-glassfish
+Docker-glassfish6
 =====================
-
-**This image will be deprecated soon. Please use the docker official image:** https://hub.docker.com/_/glassfish/
-
-[![Deploy to Tutum](https://s.tutum.co/deploy-to-tutum.svg)](https://dashboard.tutum.co/stack/deploy/)
-
-Base docker image to run a Glassfish 4.0 application server
-
 
 Usage
 -----
 
-To create the image `tutum/glassfish`, execute the following command on the tutum-docker-glassfish folder:
+To create the image execute the following command :
 
-	docker build -t tutum/glassfish .
+	docker build -t glassfish6 .
 
 To run the image and bind to port :
 
-	docker run -d -p 4848:4848 -p 8080:8080 -p 8181:8181 tutum/glassfish
+	docker run -d -p 4848:4848 -p 8080:8080 -p 8181:8181 glassfish6
 
 PS: 4848 (for administration), 8080 (for the HTTP listener), and 8181 (for the HTTPS listener)
 
@@ -57,5 +50,3 @@ You can now test your deployment:
 	http://127.0.0.1:8080/
 
 Done!
-
-**by http://www.tutum.co**
