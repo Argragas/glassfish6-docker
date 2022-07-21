@@ -1,15 +1,15 @@
-FROM tifayuki/java:7
-MAINTAINER Feng Honglin <hfeng@tutum.co>
+FROM ubuntu
 
-RUN apt-get update && \
-    apt-get install -y wget unzip pwgen expect && \
-    wget download.java.net/glassfish/4.0/release/glassfish-4.0.zip && \
-    unzip glassfish-4.0.zip -d /opt && \
-    rm glassfish-4.0.zip && \
-    apt-get clean && \
+RUN apt update && \
+    apt install -y wget unzip pwgen expect && \
+    apt install -y openjdk-17-jdk openjdk-17-jre && \
+    wget https://download.eclipse.org/ee4j/glassfish/web-6.2.5.zip && \
+    unzip web-6.2.5.zip -d /opt && \
+    rm web-6.2.5.zip && \
+    apt clean && \
     rm -rf /var/lib/apt/lists/*
 
-ENV PATH /opt/glassfish4/bin:$PATH
+ENV PATH /opt/glassfish6/bin:$PATH
 
 ADD run.sh /run.sh
 ADD change_admin_password.sh /change_admin_password.sh
